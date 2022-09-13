@@ -246,7 +246,7 @@
         var tempo = {};
         function obterDados(grafico, endpoint) {
             var http = new XMLHttpRequest();
-            http.open('GET', 'http://localhost:3000/sensores/' + endpoint, false);
+            http.open('GET', 'http://localhost:3300/sensores/' + endpoint, false);
             http.send(null);
             var valores = JSON.parse(http.responseText);
             if (paginacao[endpoint] == null) {

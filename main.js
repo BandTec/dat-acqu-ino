@@ -19,7 +19,7 @@ const HABILITAR_OPERACAO_INSERIR = false;
 
 // escolha deixar a linha 'producao' descomentada se quiser conectar seu arduino
 // ao banco de dados remoto, SQL Server:
-const AMBIENTE = 'producao';
+const AMBIENTE = 'desenvolvimento';
 
 // atenção! apenas uma das opções acima deve estar descomentada, ou 'desenvolvimento' ou 'producao'
 
@@ -44,9 +44,7 @@ const serial = async (
             }
         ).promise();
     } else if (AMBIENTE == 'producao') {
-
-        console.log('Projeto rodando inserindo dados em nuvem. Configure as credenciais abaixo.')
-
+        console.log('Projeto rodando inserindo dados em nuvem. Configure as credenciais abaixo.');
     } else {
         throw new Error('Ambiente não configurado. Verifique o arquivo "main.js" e tente novamente.');
     }
@@ -67,11 +65,12 @@ const serial = async (
         console.log(`A leitura do arduino foi iniciada na porta ${portaArduino.path} utilizando Baud Rate de ${SERIAL_BAUD_RATE}`);
     });
     arduino.pipe(new serialport.ReadlineParser({ delimiter: '\r\n' })).on('data', async (data) => {
+        //console.log(data);
         const valores = data.split(';');
         const dht11Umidade = parseFloat(valores[0]);
         const dht11Temperatura = parseFloat(valores[1]);
-        const luminosidade = parseFloat(valores[2]);
-        const lm35Temperatura = parseFloat(valores[3]);
+        const lm35Temperatura = parseFloat(valores[2]);
+        const luminosidade = parseFloat(valores[3]);
         const chave = parseInt(valores[4]);
 
         valoresDht11Umidade.push(dht11Umidade);
@@ -81,9 +80,7 @@ const serial = async (
         valoresChave.push(chave);
 
         if (HABILITAR_OPERACAO_INSERIR) {
-
             if (AMBIENTE == 'producao') {
-
                 // altere!
                 // Este insert irá inserir os dados na tabela "medida"
                 // -> altere nome da tabela e colunas se necessário
@@ -121,9 +118,7 @@ const serial = async (
             } else {
                 throw new Error('Ambiente não configurado. Verifique o arquivo "main.js" e tente novamente.');
             }
-
         }
-
     });
     arduino.on('error', (mensagem) => {
         console.error(`Erro no arduino (Mensagem: ${mensagem}`)
