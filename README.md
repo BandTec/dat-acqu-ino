@@ -14,7 +14,7 @@ _Data Acquisition Arduino API = API Arduino para Aquisição de Dados_
 
 - Gostaria de efetuar a inserção dos dados capturados no Banco de Dados? **Linha 14 - HABILITAR_OPERACAO_INSERIR;**
 
-- Caso queira inserir, você estará utilizando o ambiente de producao (SQL Server na nuvem Azure, remoto) ou desenvolvimento (MySQL Workbenc, local)? **Linha 19 - AMBIENTE**
+- Caso queira inserir, você estará utilizando o ambiente de producao (SQL Server na nuvem Azure, remoto) ou desenvolvimento (MySQL Workbench, local)? **Linha 19 - AMBIENTE**
 
 - Caso esteja utilizando o ambiente de desenvolvimento: adicione as credenciais para inserção em banco local (**Linhas 35 - 38**) e ajuste seu INSERT para que esteja de acordo com a tabela que receberá as medidas (**Linhas 108 e 109**).
 
