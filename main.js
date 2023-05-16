@@ -31,7 +31,7 @@ const serial = async (
         poolBancoDados = mysql.createPool(
             {
                 // altere!
-                // CREDENCIAIS DO BANCO LOCAL - MYSQL WORKBENCH
+                // CREDENCIAIS DO BANCO - MYSQL WORKBENCH
                 host: 'localhost',
                 user: 'USUARIO_DO_BANCO_LOCAL',
                 password: 'SENHA_DO_BANCO_LOCAL',
