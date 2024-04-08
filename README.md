@@ -12,13 +12,9 @@ _Data Acquisition Arduino API = API Arduino para Aquisição de Dados_
 
 1. Acesse o arquivo **main.js** e parametrize:
 
-- Gostaria de efetuar a inserção dos dados capturados no Banco de Dados? **Linha 14 - HABILITAR_OPERACAO_INSERIR;**
+- Gostaria de efetuar a inserção dos dados capturados no Banco de Dados? **Linha 13 - HABILITAR_OPERACAO_INSERIR;**
 
-- Caso queira inserir, você estará utilizando o ambiente de producao (SQL Server na nuvem Azure, remoto) ou desenvolvimento (MySQL Workbench, local)? **Linha 19 - AMBIENTE**
-
-- Caso esteja utilizando o ambiente de desenvolvimento: adicione as credenciais para inserção em banco local (**Linhas 35 - 38**) e ajuste seu INSERT para que esteja de acordo com a tabela que receberá as medidas (**Linhas 108 e 109**).
-
-- Caso esteja utilizando o ambiente de produção, crie o usuário para inserção no Banco de Dados SQLServer (**Arquivo script-criacao-usuario-sqlserver.sql** ) + adicione as credenciais para inserção em banco remoto (**Linha 89**) e ajuste seu INSERT para que esteja de acordo com a tabela que receberá as medidas (**Linha 84**).
+- Para configurar as credenciais do banco de dados: adicione as credenciais para inserção em banco local (**Linhas 28 - 31**) e ajuste seu INSERT para que esteja de acordo com a tabela que receberá as medidas (**Linhas 72 e 73**).
 
 4. Acesse o local deste repositório no terminal (GitBash ou VSCode) e execute os comandos abaixo:
 
