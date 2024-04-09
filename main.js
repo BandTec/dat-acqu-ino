@@ -28,7 +28,8 @@ const serial = async (
             host: 'localhost',
             user: 'USUARIO_DO_BANCO_LOCAL',
             password: 'SENHA_DO_BANCO_LOCAL',
-            database: 'DATABASE_LOCAL'
+            database: 'DATABASE_LOCAL',
+            port: 3306
         }
     ).promise();
 
