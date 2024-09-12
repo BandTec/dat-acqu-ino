@@ -6,7 +6,7 @@ _Data Acquisition Arduino API = API Arduino para Aquisição de Dados_
 
 # Como usar
 
-1. Certifique-se de que o Arduino está em funcionamento e capturando dado do sensor, seja ele analogico ou digital.
+1. Certifique-se de que o Arduino está em funcionamento e capturando dado do sensor, seja ele analógico ou digital.
 
 1. Clone este repositório em sua máquina.
 
