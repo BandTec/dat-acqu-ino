@@ -1,4 +1,4 @@
-<img src="https://user-images.githubusercontent.com/46379117/189931169-9df7b283-bf43-4af4-8154-b1669862090e.png" width="600px">
+<img src="https://user-images.githubusercontent.com/46379117/189931169-9df7b283-bf43-4af4-8154-b1669862090e.png" width="1000px">
 
 _Data Acquisition Arduino API = API Arduino para Aquisição de Dados_
 
@@ -6,15 +6,15 @@ _Data Acquisition Arduino API = API Arduino para Aquisição de Dados_
 
 # Como usar
 
-1. Certifique-se de que o Arduino está em funcionamento e capturando dados de temperatura, umidade, luminosidade e proximidade utilizando os sensores DHT11, TRC5000, LDR e LM35.
+1. Certifique-se de que o Arduino está em funcionamento e capturando dado do sensor, seja ele analogico ou digital.
 
 1. Clone este repositório em sua máquina.
 
 1. Acesse o arquivo **main.js** e parametrize:
 
-- Gostaria de efetuar a inserção dos dados capturados no Banco de Dados? **Linha 15 - HABILITAR_OPERACAO_INSERIR;**
+- Gostaria de efetuar a inserção dos dados capturados no Banco de Dados? **Linha 11 - HABILITAR_OPERACAO_INSERIR;**
 
-- Para configurar as credenciais do banco de dados: adicione as credenciais para inserção no banco MySQL (**Linhas 32 - 36**) e ajuste seu INSERT para que esteja de acordo com a tabela que receberá as medidas (**Linhas 84 e 85**).
+- Para configurar as credenciais do banco de dados: adicione as credenciais para inserção no banco MySQL (**Linhas 22 - 26**) e ajuste seu INSERT para que esteja de acordo com a tabela que receberá as medidas (**Linhas 66 e 67**).
 
 4. Acesse o local deste repositório no terminal (GitBash ou VSCode) e execute os comandos abaixo:
 
