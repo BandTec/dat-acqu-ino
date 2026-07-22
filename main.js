@@ -3,17 +3,9 @@ const serialport = require('serialport');
 const express = require('express');
 const mysql = require('mysql2');
 
-const { loadEnvFile } = require('node:process');
-
-try {
-    loadEnvFile();
-} catch {
-    console.log('Não foi possível carregar o arquivo .env');
-}
-
 // constantes para configurações
-const SERIAL_BAUD_RATE = 9600;
-const SERVIDOR_PORTA = 3300;
+const SERIAL_BAUD_RATE = process.env.SERIAL_BAUD_RATE;
+const SERVIDOR_PORTA = process.env.SERVER_PORT;
 
 // habilita ou desabilita a inserção de dados no banco de dados
 const HABILITAR_OPERACAO_INSERIR = false;
@@ -26,11 +18,11 @@ const serial = async (
 
     // conexão com o banco de dados MySQL
     let poolBancoDados = mysql.createPool({
-        host: process.env.DB_HOST || '',
-        user: process.env.DB_USER || '',
-        password: process.env.DB_PASSWORD || '',
-        database: process.env.DB_NAME || '',
-        port: Number(process.env.DB_PORT) || 3306
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME,
+        port: process.env.DB_PORT
     }).promise();
 
     // lista as portas seriais disponíveis e procura pelo Arduino
